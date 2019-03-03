@@ -17,5 +17,6 @@ namespace TestTast.Data
         {
             Database.EnsureCreated();
         }       
+
     }
 }

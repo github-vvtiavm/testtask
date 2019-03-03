@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.WebApi", "TestTask.WebApi\TestTask.WebApi.csproj", "{1B6383AF-016F-416F-8A33-1B7826C2B6AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.WebApi", "TestTask.WebApi\TestTask.WebApi.csproj", "{1B6383AF-016F-416F-8A33-1B7826C2B6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Common", "TestTask.Common\TestTask.Common.csproj", "{05563AF2-37C0-433E-9D3C-700DAF04C6E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Common", "TestTask.Common\TestTask.Common.csproj", "{05563AF2-37C0-433E-9D3C-700DAF04C6E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTast.Data", "TestTast.Data\TestTast.Data.csproj", "{99FF0280-7E9F-4F34-8EF6-3D212E4170A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTast.Data", "TestTast.Data\TestTast.Data.csproj", "{99FF0280-7E9F-4F34-8EF6-3D212E4170A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Buisness", "TestTask.Buisness\TestTask.Buisness.csproj", "{28FF6C8A-52A6-4D9E-BAFD-FC35BF8D161E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{99FF0280-7E9F-4F34-8EF6-3D212E4170A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99FF0280-7E9F-4F34-8EF6-3D212E4170A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99FF0280-7E9F-4F34-8EF6-3D212E4170A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FF6C8A-52A6-4D9E-BAFD-FC35BF8D161E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FF6C8A-52A6-4D9E-BAFD-FC35BF8D161E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FF6C8A-52A6-4D9E-BAFD-FC35BF8D161E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FF6C8A-52A6-4D9E-BAFD-FC35BF8D161E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
