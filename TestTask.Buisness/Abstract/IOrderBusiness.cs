@@ -4,9 +4,9 @@ using TestTask.Buisness.Models;
 
 namespace TestTask.Buisness.Abstract
 {
-    public interface IOrderBuisness
+    public interface IOrderBusiness
     {
         Task<OrderModel> AddOrder(OrderModel model);
-        Task<IEnumerable<OrderModel>> GetOrrders();
+        Task<IEnumerable<OrderModel>> GetOrders();
     }
 }

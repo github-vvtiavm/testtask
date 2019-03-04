@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using TestTask.Common.Abstract;
 
@@ -17,7 +14,8 @@ namespace TestTask.Buisness
         }
         public async Task AddAsync(TEntity entity)
         {
-            await Task.Factory.StartNew(() => _context.Set<TEntity>().Add(entity));
+            _context.Set<TEntity>().Add(entity);
+            await _context.SaveChangesAsync();
 
         }
 

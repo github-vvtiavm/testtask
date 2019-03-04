@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using TestTask.Buisness;
+using TestTask.Buisness.Abstract;
+using TestTask.Buisness.Models;
 using TestTask.Common.Abstract;
+using TestTask.Common.Entities;
 using TestTast.Data;
 
 namespace TestTask.WebApi
@@ -30,7 +27,10 @@ namespace TestTask.WebApi
         {
             services.AddMvc();
             services.AddScoped<IDbContext, DataContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IOrderBusiness, OrderBusiness>();
             services.AddDbContext<DataContext>(options => options.UseNpgsql(Configuration["ConnectionString"]));
+            Mapping();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,5 +43,15 @@ namespace TestTask.WebApi
                 context.EnsureCreated();
             }
         }
+
+        public void Mapping()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<OrderModel, Order>().ForMember(x => x.SourceTimeZone, y => y.Ignore());
+                cfg.CreateMap<Order, OrderModel>();
+            });
+        }
+
     }
 }

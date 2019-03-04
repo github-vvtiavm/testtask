@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using TestTask.Buisness.Abstract;
+using TestTask.Buisness.Models;
 
 namespace TestTask.WebApi.Controllers
 {
@@ -10,25 +9,21 @@ namespace TestTask.WebApi.Controllers
     [ApiController]
     public class OrderController : Controller
     {
-        // GET api/values
+        private readonly IOrderBusiness _orderBusiness;
+        public OrderController(IOrderBusiness orderBusiness)
+        {
+            _orderBusiness = orderBusiness;
+        }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            await Task.CompletedTask;
-            return Ok(new string[] { "value1", "value2" });
+            return Ok(await _orderBusiness.GetOrders());
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post([FromBody] OrderModel model)
         {
+            return Ok(await _orderBusiness.AddOrder(model));
         }
     }
 }

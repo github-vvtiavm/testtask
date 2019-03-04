@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TestTask.Common.Abstract
+﻿namespace TestTask.Common.Abstract
 {
     public class EntityKey
     {
